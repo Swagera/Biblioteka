@@ -18,6 +18,10 @@ private IBookService iBookService;
     public String home(){
         return "home";
     }
+    @GetMapping("/dodaj")
+    public String addBook(){
+        return "add-book";
+    }
 
     @GetMapping("/lista")
     public ResponseEntity<List<BookModel>> getAllBooks(){
