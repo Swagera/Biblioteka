@@ -1,13 +1,37 @@
 <!DOCTYPE html>
-<html   xmlns="http://www.w3.org/1999/xhtml"
+<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml"
         xmlns:th="http://www.thymeleaf.org">
 
     <head>
-     <title>Lecimy tutaj kurwa</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Library</title>
+        <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&family=Sofia+Sans+Condensed&display=swap" 
+        rel="stylesheet">
+        <link rel="stylesheet" href="/src\main\resources\css\styles.css"> 
     </head>
-
     <body>
-    <h1>biblioteczka dla szefow;]</h1>
-    <img th:src="@{images/Bookshelf.png}"/>
+        <main>
+            <header>
+                <div class="content-wrap">
+                    <h1>Bookshelf Project</h1>
+                </div>
+            </header>
+            <section class="projects">
+            <div class="content-wrap">
+                <h2>My Library</h2>
+                    <section class="project-item">
+                    <img src="\src\main\resources\static\images\8cEbq5qMi.png">
+                        <a class="btn" href="https://jbzd.com.pl" target="_blank">Add a new book</a>
+                        <a class="btn" href="https://www.jbzd.com.pl">View an existing book</a>
+                        <a class="btn" href="https://jbzd.com.pl" target="_blank">Search</a>
+                        <a class="btn" href="https://www.jbzd.com.pl">Jbzd</a>
+                    </header>
+            </section>
+        </main> 
+            <p>Repository can be found at <a href="https://github.com/Swagera/Biblioteka"> Github</a></p>
+        </div> 
     </body>
 </html>
+
