@@ -10,5 +10,4 @@ public class BibliotekaController {
     public String home(){
         return "home";
     }
-
 }
