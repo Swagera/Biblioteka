@@ -5,40 +5,40 @@ html {
     box-sizing: inherit;
   }
  
-    body {
-        background: rgb(233, 227, 227);
-        color: #220505;
-        font-family:  'Sofia Sans Condensed', sans-serif;
-        font-size: 20px;
-        line-height: 0.5; 
+  body {
+     background: rgb(233, 227, 227);
+    color: #220505;
+    font-family:'Montserrat', sans-serif;
+    font-size: 15px;
+    line-height: 0.5; 
 }
 h1{
-    font-family:'Sofia Sans Condensed', sans-serif;
-    font-weight: 400;
+    font-family:'Montserrat', sans-serif;
+    font-weight: 600;
     margin: 0;
     text-align: center;
     position: relative;
-    margin-top: 80px;
-    margin-bottom: 40px;
+    margin-top: 60px;
+    margin-bottom: 20px;
 }
 h2 {
     position: relative; 
     text-align: center;
-    margin-bottom: 40px;
-    font-family: 'Sofia Sans Condensed', sans-serif;
-    font-weight: 400;
-    font-size: 35px;
+    margin-bottom: 50px;
+    font-family:'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 30px;
 }
 p {
-    font-size: 15px;
+    font-size: 11px;
     text-align: center;
-    margin-top: 100px;
+    margin-top: 0px;
     text-decoration: none;
 }   
 
 img{  
-    height: 100px;  
-    width: 140px;
+    height: 90px;  
+    width: 130px;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
@@ -62,14 +62,11 @@ img{
     margin-bottom: 50px;
     justify-content: center;
     max-width: 200px;
-    font-family: 'EB Garamond', serif;
-    
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;    
     
   }
   .projects .btn:hover {
     background: rgba(172, 172, 180, 0.8);
   }
-  
-
-
   
