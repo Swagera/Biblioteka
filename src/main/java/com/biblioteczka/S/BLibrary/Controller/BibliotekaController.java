@@ -22,6 +22,10 @@ public class BibliotekaController {
     public String home(){
         return "home";
     }
+    @GetMapping("search")
+    public String search(){
+        return "search";
+    }
     @PostMapping("/add-book")
     public String addBook(@RequestBody BookModel Book) {
         bookService.createBook(Book);
