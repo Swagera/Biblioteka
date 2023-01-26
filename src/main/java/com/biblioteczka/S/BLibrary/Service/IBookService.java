@@ -8,7 +8,7 @@ public interface IBookService {
      BookModel createBook (BookModel bookModel);
     BookModel updateBook (BookModel bookModel);
     List<BookModel> getAllBooks();
-    BookModel getBookById(Long id);
-    void deleteBook (Long id);
+    BookModel getBookById(int id);
+    String deleteBook (int id);
 
 }

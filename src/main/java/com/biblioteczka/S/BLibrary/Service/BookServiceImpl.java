@@ -10,10 +10,13 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-@Transactional
 public class BookServiceImpl implements IBookService {
-    @Autowired
+
     private BookRepository bookRepository;
+    public BookServiceImpl (BookRepository bookRepository){
+        super();
+        this.bookRepository = bookRepository;
+    }
     @Override
     public BookModel createBook(BookModel bookModel) {
         return bookRepository.save(bookModel);
@@ -21,44 +24,22 @@ public class BookServiceImpl implements IBookService {
 
     @Override
     public BookModel updateBook(BookModel bookModel) {
-        Optional<BookModel> updateById = this.bookRepository.findById(bookModel.getId());
-
-        if(updateById.isPresent()){
-            BookModel updatedBook = updateById.get();
-            updatedBook.setId(bookModel.getId());
-            updatedBook.setGrade(bookModel.getGrade());
-            updatedBook.setTitle(bookModel.getTitle());
-            updatedBook.setYear(bookModel.getYear());
-            bookRepository.save(updatedBook);
-            return updatedBook;
-        }else {
-            throw new RuntimeException("Nie znaleziono ksiazki");
-        }
+        return bookRepository.save(bookModel);
     }
 
     @Override
     public List<BookModel> getAllBooks() {
-        return this.bookRepository.findAll();
+        return bookRepository.findAll();
     }
 
     @Override
-    public BookModel getBookById(Long id) {
-        Optional<BookModel> bookById = this.bookRepository.findById(id);
-        if(bookById.isPresent()){
-            return bookById.get();
-        } else {
-            throw new RuntimeException("Nie ma ksiazki o takim id");
-        }
-
+    public BookModel getBookById(int id) {
+        return bookRepository.findById(id).get();
     }
 
     @Override
-    public void deleteBook(Long id) {
-        Optional<BookModel> bookDeletion = this.bookRepository.findById(id);
-        if(bookDeletion.isPresent()){
-            bookRepository.delete(bookDeletion.get());
-        } else {
-            throw new RuntimeException("Nie mozna usunac ksiazki o takim id bo nie ma takiej");
-        }
+    public String deleteBook(int id) {
+    bookRepository.deleteById(id);
+    return "book with id: " +id + " deleted!";
     }
 }
