@@ -31,4 +31,27 @@
         </div>
       </nav>
     </main>
+<div class="column">
+    <table>
+        <thead>
+        <tr>
+            <th> title</th>
+            <th> year</th>
+            <th> grade </th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr th:each = "book: ${books}">
+            <td th:text = "${book.title}"></td>
+            <td th:text = "${book.year}"></td>
+            <td th:text = "${book.grade}"></td>
+
+
+            </td>
+        </tr>
+        </tbody>
+
+    </table>
+</div>
 </html>
