@@ -2,6 +2,7 @@ package com.biblioteczka.S.BLibrary;
 
 import com.biblioteczka.S.BLibrary.Model.BookModel;
 import com.biblioteczka.S.BLibrary.Repository.BookRepository;
+import io.swagger.v3.oas.annotations.OpenAPIDefinition;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;

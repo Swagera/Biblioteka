@@ -9,6 +9,6 @@ public interface IBookService {
     BookModel updateBook (BookModel bookModel);
     List<BookModel> getAllBooks();
     BookModel getBookById(int id);
-    String deleteBook (int id);
+    String deleteBook (BookModel bookModel);
 
 }

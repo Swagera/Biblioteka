@@ -2,9 +2,11 @@ package com.biblioteczka.S.BLibrary.Controller;
 
 import com.biblioteczka.S.BLibrary.Model.BookModel;
 import com.biblioteczka.S.BLibrary.Service.BookServiceImpl;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
@@ -24,15 +26,23 @@ public class BookListController {
         bookService.getBookById(id);
         return "book-list";
     }
-
-    @PutMapping("/update")
-    public String updateBook(@RequestBody BookModel Book){
-        bookService.updateBook(Book);
-        return "book-list";
+    @GetMapping("/edit/{id}")
+    public String showUpdateForm(@PathVariable("id") int id, Model model) {
+        BookModel bookModel = bookService.getBookById(id);
+        model.addAttribute("book", bookModel);
+        return "update-book";
     }
 
-    @DeleteMapping("/{id}")
-    public String deleteBook(@PathVariable int id) {
-        return bookService.deleteBook(id);
+    @PostMapping("/update/{id}")
+    public String updateUser(@PathVariable("id") int id, @Valid BookModel bookModel, Model model) {
+        bookService.updateBook(bookModel);
+        return "redirect:/book-list";
+    }
+
+    @GetMapping("/delete/{id}")
+    public String deleteBook(@PathVariable int id, Model model) {
+        BookModel bookModel = bookService.getBookById(id);
+        bookService.deleteBook(bookModel);
+        return "redirect:/book-list";
     }
 }

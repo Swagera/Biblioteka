@@ -38,8 +38,8 @@ public class BookServiceImpl implements IBookService {
     }
 
     @Override
-    public String deleteBook(int id) {
-    bookRepository.deleteById(id);
-    return "book with id: " +id + " deleted!";
+    public String deleteBook(BookModel bookModel) {
+    bookRepository.delete(bookModel);
+    return "book with id: " +bookModel.getId() + " deleted!";
     }
 }

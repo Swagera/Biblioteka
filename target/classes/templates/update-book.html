@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update</title>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&family=Sofia+Sans+Condensed&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">>
+</head>
+<body>
+<a th:href="@{/}">Home</a>
+<form action="#"
+      th:action="@{/book-list/update/{id}(id=${book.id})}"
+      th:object="${book}"
+      method="post">
+  <label for="title">Title</label>
+  <input type="text" th:field="*{title}" id="title" placeholder="title">
+  <label for="year">year</label>
+  <input type="text" th:field="*{year}" id="year" placeholder="year">
+    <label for="grade">grade</label>
+    <input type="text" th:field="*{grade}" id="grade" placeholder="grade">
+  <input type="submit" value="Update Book">
+</form>
+</body>
+</html>

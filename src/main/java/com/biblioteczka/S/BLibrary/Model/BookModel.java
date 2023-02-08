@@ -6,6 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+
 @Data
 @Entity
 @NoArgsConstructor
@@ -13,7 +14,7 @@ import lombok.NoArgsConstructor;
 @Table(name = "books")
 public class BookModel {
 @Id
-@GeneratedValue
+@GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String title;
     private String year;

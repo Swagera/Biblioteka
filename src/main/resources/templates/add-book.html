@@ -12,5 +12,19 @@
     <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
-<h1> PANEL DODAWANIA work in progress </h1>
+<a th:href="@{/}">Home</a>
+
+<form th:action="@{/add-book}" th:object="${book}" method="post">>
+    <h2>Enter your book</h2>
+
+    <label for="title">Title</label>
+    <input type="text" th:field="*{title}" id="title" placeholder="title">
+    <label for="year">year</label>
+    <input type="text" th:field="*{year}" id="year" placeholder="year">
+    <label for="grade">grade</label>
+    <input type="text" th:field="*{grade}" id="grade" placeholder="grade">
+    <input type="submit" value="Add Book">
+
+</form>
+
 </body>
